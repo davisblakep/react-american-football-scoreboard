@@ -27,7 +27,7 @@ code {
 }
 
 button {
-  display: inline-block;
+  display: flex;
   border: none;
   padding: 1rem 2rem;
   margin: 0;
@@ -36,6 +36,7 @@ button {
   color: #ffffff;
   font-family: inherit;
   font-size: 1.6rem;
+  color: white;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
