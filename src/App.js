@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
-import NavTool from "./Nav";
 
 import { Button } from '@material-ui/core';
 
-import {Spring} from 'react-spring/renderprops'
+import { Spring } from 'react-spring/renderprops'
 
 
 function App() {
@@ -19,7 +18,6 @@ const [awaycount, setAwayCount] = useState(32)
   to={{ opacity: 1 }}>
   {props =>
     <div style={props} className="container">
-     
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
@@ -48,7 +46,6 @@ const [awaycount, setAwayCount] = useState(32)
           <Button size="large" variant="contained"  onClick={() => {setAwayCount(awaycount + 3)}}>Away Field Goal</Button>
         </div>
       </section>
-      
     </div>}
 </Spring>
   );

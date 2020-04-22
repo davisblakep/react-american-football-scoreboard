@@ -23,10 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
   height: 100vh;
-  /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */
   background-image: url("https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
-  
 }
 
 code {
