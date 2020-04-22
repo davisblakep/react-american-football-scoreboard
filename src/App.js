@@ -2,13 +2,24 @@
 import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+import NavTool from "./Nav";
+
+import { Button } from '@material-ui/core';
+
+import {Spring} from 'react-spring/renderprops'
+
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 const [homecount, setHomeCount] = useState(32)
 const [awaycount, setAwayCount] = useState(32)
   return (
-    <div className="container">
+    <Spring 
+  from={{ opacity: 0 }}
+  to={{ opacity: 1 }}>
+  {props =>
+    <div style={props} className="container">
+     
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
@@ -29,15 +40,17 @@ const [awaycount, setAwayCount] = useState(32)
       <section className="buttons">
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown" onClick={() => {setHomeCount(homecount + 7)}}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick={() => {setHomeCount(homecount + 3)}}>Home Field Goal</button>
+          <Button size="large" variant="contained"  onClick={() => {setHomeCount(homecount + 7)}}>Home Touchdown</Button>
+          <Button size="large" variant="contained"  onClick={() => {setHomeCount(homecount + 3)}}>Home Field Goal</Button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown" onClick={() => {setAwayCount(awaycount + 7)}}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal" onClick={() => {setAwayCount(awaycount + 3)}}>Away Field Goal</button>
+          <Button size="large" variant="contained"  onClick={() => {setAwayCount(awaycount + 7)}}>Away Touchdown</Button>
+          <Button size="large" variant="contained"  onClick={() => {setAwayCount(awaycount + 3)}}>Away Field Goal</Button>
         </div>
       </section>
-    </div>
+      
+    </div>}
+</Spring>
   );
 }
 
